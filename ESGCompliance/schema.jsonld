@@ -1,1 +1,83 @@
-
+{
+    "@context": [
+        {
+            "@protected": true,
+            "@version": 1.1,
+            "id": "@id",
+            "type": "@type",
+            "ESGCompliance": {
+                "@context": {
+                    "@propagate": true,
+                    "@protected": true,
+                    "iden3-vocab": "urn:uuid:19732135-6fe3-4cc6-a3ca-e02e172c00ae#",
+                    "xsd": "http://www.w3.org/2001/XMLSchema#",
+                    "legalName": {
+                        "@id": "iden3-vocab:legalName",
+                        "@type": "xsd:string"
+                    },
+                    "jurisdiction": {
+                        "@id": "iden3-vocab:jurisdiction",
+                        "@type": "xsd:string"
+                    },
+                    "industrySector": {
+                        "@id": "iden3-vocab:industrySector",
+                        "@type": "xsd:string"
+                    },
+                    "reportingFramework": {
+                        "@id": "iden3-vocab:reportingFramework",
+                        "@type": "xsd:string"
+                    },
+                    "frameworkVersion": {
+                        "@id": "iden3-vocab:frameworkVersion",
+                        "@type": "xsd:string"
+                    },
+                    "assessmentPeriodStart": {
+                        "@id": "iden3-vocab:assessmentPeriodStart",
+                        "@type": "xsd:dateTime"
+                    },
+                    "assessmentPeriodEnd": {
+                        "@id": "iden3-vocab:assessmentPeriodEnd",
+                        "@type": "xsd:dateTime"
+                    },
+                    "assessmentDate": {
+                        "@id": "iden3-vocab:assessmentDate",
+                        "@type": "xsd:dateTime"
+                    },
+                    "assessedBy": {
+                        "@id": "iden3-vocab:assessedBy",
+                        "@type": "xsd:string"
+                    },
+                    "verifiedBy": {
+                        "@id": "iden3-vocab:verifiedBy",
+                        "@type": "xsd:string"
+                    },
+                    "overallScore": {
+                        "@id": "iden3-vocab:overallScore",
+                        "@type": "xsd:integer"
+                    },
+                    "scoringScale": {
+                        "@id": "iden3-vocab:scoringScale",
+                        "@type": "xsd:string"
+                    },
+                    "complianceStatus": {
+                        "@id": "iden3-vocab:complianceStatus",
+                        "@type": "xsd:string"
+                    },
+                    "complianceTier": {
+                        "@id": "iden3-vocab:complianceTier",
+                        "@type": "xsd:string"
+                    },
+                    "publicReportLink": {
+                        "@id": "iden3-vocab:publicReportLink",
+                        "@type": "xsd:string"
+                    },
+                    "evidenceHash": {
+                        "@id": "iden3-vocab:evidenceHash",
+                        "@type": "xsd:string"
+                    }
+                },
+                "@id": "urn:uuid:73e72712-c7d8-4d33-bb73-179227872731"
+            }
+        }
+    ]
+}
