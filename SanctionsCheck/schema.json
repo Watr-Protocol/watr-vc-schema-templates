@@ -122,7 +122,7 @@
           "format": "date"
         },
         "listsChecked": {
-          "type": "array",
+          "type": "string",
           "title": "ListsChecked",
           "description": "Field: listsChecked"
         },
