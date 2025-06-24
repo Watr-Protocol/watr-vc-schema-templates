@@ -1,0 +1,55 @@
+{
+  "@context": [
+    {
+      "@protected": true,
+      "@version": 1.1,
+      "id": "@id",
+      "type": "@type",
+      "object": {
+        "@context": {
+          "@propagate": true,
+          "@protected": true,
+          "iden3-vocab": "urn:uuid:72b5570a-d218-42a9-8295-b8a337ffab00#",
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "entityType": {
+            "@id": "iden3-vocab:entityType",
+            "@type": "xsd:string"
+          },
+          "entityName": {
+            "@id": "iden3-vocab:entityName",
+            "@type": "xsd:string"
+          },
+          "screeningDate": {
+            "@id": "iden3-vocab:screeningDate",
+            "@type": "xsd:string"
+          },
+          "listsChecked": {
+            "@id": "iden3-vocab:listsChecked",
+            "@type": "xsd:array"
+          },
+          "sanctionsMatch": {
+            "@id": "iden3-vocab:sanctionsMatch",
+            "@type": "xsd:boolean"
+          },
+          "matchDetails": {
+            "@id": "iden3-vocab:matchDetails",
+            "@type": "xsd:string"
+          },
+          "screeningProvider": {
+            "@id": "iden3-vocab:screeningProvider",
+            "@type": "xsd:string"
+          },
+          "screeningMethod": {
+            "@id": "iden3-vocab:screeningMethod",
+            "@type": "xsd:string"
+          },
+          "confidenceScore": {
+            "@id": "iden3-vocab:confidenceScore",
+            "@type": "xsd:integer"
+          }
+        },
+        "@id": "urn:uuid:b013e5e8-d2da-460d-988c-4d65e2517f50"
+      }
+    }
+  ]
+}
