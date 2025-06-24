@@ -1,1 +1,201 @@
-
+{
+    "$metadata": {
+        "uris": {
+            "jsonLdContext": "https://raw.githubusercontent.com/Watr-Protocol/watr-vc-schema-templates/refs/heads/main/LegalEntity/schema.jsonld"
+        },
+        "version": "1.0",
+        "type": "LegalEntity"
+    },
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "A Verifiable Credential asserting the verified registration and legal identity of an organization.",
+    "title": "Legal Entity",
+    "properties": {
+        "credentialSubject": {
+            "description": "Stores the data of the credential",
+            "title": "Credential subject",
+            "properties": {
+                "legalName": {
+                    "description": "Official legal name of the organization.",
+                    "title": "Legal Name",
+                    "type": "string"
+                },
+                "entityType": {
+                    "description": "Legal classification of the business.",
+                    "enum": [
+                        "LLC",
+                        "GmbH",
+                        "Pvt Ltd",
+                        "Inc",
+                        "Sole Proprietor",
+                        "Partnership",
+                        "Cooperative",
+                        "Fund",
+                        "Bank",
+                        "DAO"
+                    ],
+                    "title": "Entity Type",
+                    "type": "string"
+                },
+                "registrationNumber": {
+                    "description": "Company or business registry number.",
+                    "title": "Registration Number",
+                    "type": "string"
+                },
+                "jurisdiction": {
+                    "description": "Country or legal authority of incorporation.",
+                    "enum": [
+                        "SG",
+                        "DE",
+                        "IN",
+                        "US",
+                        "UK",
+                        "CH",
+                        "AE",
+                        "EU",
+                        "GLOBAL"
+                    ],
+                    "title": "Jurisdiction",
+                    "type": "string"
+                },
+                "incorporationDate": {
+                    "description": "Date when the entity was legally incorporated.",
+                    "title": "Incorporation Date",
+                    "format": "date",
+                    "type": "string"
+                },
+                "taxID": {
+                    "description": "Tax identifier or VAT number (if applicable).",
+                    "title": "Tax ID",
+                    "type": "string"
+                },
+                "LEI": {
+                    "description": "Optional Legal Entity Identifier as issued by GLEIF.",
+                    "title": "Legal Entity Identifier (LEI)",
+                    "type": "string"
+                },
+                "registeredAddress": {
+                    "description": "Head office or legal registration address.",
+                    "title": "Registered Address",
+                    "type": "string"
+                },
+                "businessWebsite": {
+                    "description": "Website URL of the organization.",
+                    "title": "Business Website",
+                    "format": "uri",
+                    "type": "string"
+                },
+                "contactEmail": {
+                    "description": "Official email for the entity.",
+                    "title": "Contact Email",
+                    "format": "email",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Stores the DID of the subject that owns the credential",
+                    "title": "Credential subject ID",
+                    "format": "uri",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "legalName",
+                "entityType",
+                "registrationNumber",
+                "jurisdiction",
+                "incorporationDate"
+            ],
+            "type": "object"
+        },
+        "@context": {
+            "type": [
+                "string",
+                "array",
+                "object"
+            ]
+        },
+        "expirationDate": {
+            "format": "date-time",
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "issuanceDate": {
+            "format": "date-time",
+            "type": "string"
+        },
+        "issuer": {
+            "type": [
+                "string",
+                "object"
+            ],
+            "format": "uri",
+            "properties": {
+                "id": {
+                    "format": "uri",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "type": {
+            "type": [
+                "string",
+                "array"
+            ],
+            "items": {
+                "type": "string"
+            }
+        },
+        "credentialSchema": {
+            "properties": {
+                "id": {
+                    "format": "uri",
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "type": "object"
+        },
+        "credentialStatus": {
+            "description": "Allows the discovery of information about the current status of the credential, such as whether it is suspended or revoked.",
+            "title": "Credential Status",
+            "properties": {
+                "id": {
+                    "description": "Id URL of the credentialStatus.",
+                    "title": "Id",
+                    "format": "uri",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Expresses the credential status type (method). The value should provide enough information to determine the current status of the credential.",
+                    "title": "Type",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "type": "object"
+        }
+    },
+    "required": [
+        "credentialSubject",
+        "@context",
+        "id",
+        "issuanceDate",
+        "issuer",
+        "type",
+        "credentialSchema"
+    ],
+    "type": "object"
+}
