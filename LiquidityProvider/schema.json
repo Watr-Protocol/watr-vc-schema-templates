@@ -1,1 +1,261 @@
 
+{
+    "$metadata": {
+        "uris": {
+            "jsonLdContext": "https://raw.githubusercontent.com/Watr-Protocol/watr-vc-schema-templates/refs/heads/main/LiquidityProvider/schema.jsonld"
+        },
+        "version": "1.0",
+        "type": "LiquidityProvider"
+    },
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "A Verifiable Credential issued to an entity authorized to provide liquidity in financial or tokenized markets.",
+    "title": "Liquidity Provider",
+    "properties": {
+        "credentialSubject": {
+            "description": "Stores the data of the credential",
+            "title": "Credential subject",
+            "properties": {
+                "legalName": {
+                    "description": "The full legal name of the organization.",
+                    "title": "Legal Entity Name",
+                    "type": "string"
+                },
+                "entityType": {
+                    "description": "The classification of the liquidity provider.",
+                    "enum": [
+                        "individual",
+                        "company",
+                        "fund",
+                        "bank",
+                        "dao"
+                    ],
+                    "title": "Entity Type",
+                    "type": "string"
+                },
+                "jurisdiction": {
+                    "description": "Country or regulatory zone of registration.",
+                    "enum": [
+                        "SG",
+                        "DE",
+                        "FR",
+                        "NL",
+                        "IN",
+                        "AE",
+                        "CH",
+                        "UK",
+                        "US"
+                    ],
+                    "title": "Jurisdiction",
+                    "type": "string"
+                },
+                "registrationNumber": {
+                    "description": "Entity or fund registration number.",
+                    "title": "Registration Number",
+                    "type": "string"
+                },
+                "licenseType": {
+                    "description": "Regulatory classification or exemption type.",
+                    "enum": [
+                        "Unlicensed",
+                        "MSB",
+                        "EMI",
+                        "Investment Fund",
+                        "Bank",
+                        "Family Office",
+                        "Crypto Fund",
+                        "Treasury DAO"
+                    ],
+                    "title": "License Type",
+                    "type": "string"
+                },
+                "licenseIssuer": {
+                    "description": "Name of the regulatory body or self-attesting node.",
+                    "title": "License Issuer",
+                    "type": "string"
+                },
+                "liquidityScope": {
+                    "description": "Permitted scope for providing liquidity.",
+                    "enum": [
+                        "Trade Finance",
+                        "Stablecoin Market Making",
+                        "Token Bridge",
+                        "Treasury Management",
+                        "Carbon Market",
+                        "WatrVault Participation"
+                    ],
+                    "title": "Liquidity Scope",
+                    "type": "string"
+                },
+                "maximumCommittedCapital": {
+                    "description": "Maximum liquidity the provider is authorized to deploy (in USD equivalent).",
+                    "title": "Maximum Capital Commitment",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "complianceStatus": {
+                    "description": "Compliance approval status by Watr or another authority.",
+                    "enum": [
+                        "approved",
+                        "pending",
+                        "suspended",
+                        "revoked"
+                    ],
+                    "title": "Compliance Status",
+                    "type": "string"
+                },
+                "validFromDate": {
+                    "description": "Credential validity start date.",
+                    "title": "Valid From",
+                    "format": "date",
+                    "type": "string"
+                },
+                "validUntilDate": {
+                    "description": "Credential validity end date.",
+                    "title": "Valid Until",
+                    "format": "date",
+                    "type": "string"
+                },
+                "amlScreeningStatus": {
+                    "description": "Result of AML/sanctions screening for the entity.",
+                    "enum": [
+                        "cleared",
+                        "pending",
+                        "failed",
+                        "not_required"
+                    ],
+                    "title": "AML/Sanctions Status",
+                    "type": "string"
+                },
+                "riskClassification": {
+                    "description": "Risk-based categorization for treasury or compliance logic.",
+                    "enum": [
+                        "low",
+                        "medium",
+                        "high"
+                    ],
+                    "title": "Risk Classification",
+                    "type": "string"
+                },
+                "operatingWalletAddress": {
+                    "description": "On-chain wallet address controlled by the liquidity provider.",
+                    "title": "Wallet Address",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Stores the DID of the subject that owns the credential",
+                    "title": "Credential subject ID",
+                    "format": "uri",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "legalName",
+                "entityType",
+                "jurisdiction",
+                "registrationNumber",
+                "licenseType",
+                "licenseIssuer",
+                "liquidityScope",
+                "maximumCommittedCapital",
+                "complianceStatus",
+                "validFromDate",
+                "validUntilDate",
+                "amlScreeningStatus",
+                "riskClassification",
+                "operatingWalletAddress"
+            ],
+            "type": "object"
+        },
+        "@context": {
+            "type": [
+                "string",
+                "array",
+                "object"
+            ]
+        },
+        "expirationDate": {
+            "format": "date-time",
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "issuanceDate": {
+            "format": "date-time",
+            "type": "string"
+        },
+        "issuer": {
+            "type": [
+                "string",
+                "object"
+            ],
+            "format": "uri",
+            "properties": {
+                "id": {
+                    "format": "uri",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "type": {
+            "type": [
+                "string",
+                "array"
+            ],
+            "items": {
+                "type": "string"
+            }
+        },
+        "credentialSchema": {
+            "properties": {
+                "id": {
+                    "format": "uri",
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "type": "object"
+        },
+        "credentialStatus": {
+            "description": "Allows the discovery of information about the current status of the credential, such as whether it is suspended or revoked.",
+            "title": "Credential Status",
+            "properties": {
+                "id": {
+                    "description": "Id URL of the credentialStatus.",
+                    "title": "Id",
+                    "format": "uri",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Expresses the credential status type (method). The value should provide enough information to determine the current status of the credential.",
+                    "title": "Type",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "type": "object"
+        }
+    },
+    "required": [
+        "credentialSubject",
+        "@context",
+        "id",
+        "issuanceDate",
+        "issuer",
+        "type",
+        "credentialSchema"
+    ],
+    "type": "object"
+}
