@@ -1,1 +1,75 @@
-
+{
+    "@context": [
+        {
+            "@protected": true,
+            "@version": 1.1,
+            "id": "@id",
+            "type": "@type",
+            "LiquidityProvider": {
+                "@context": {
+                    "@propagate": true,
+                    "@protected": true,
+                    "iden3-vocab": "urn:uuid:c293ab63-c34c-4bb6-8b5f-cddf012520d1#",
+                    "xsd": "http://www.w3.org/2001/XMLSchema#",
+                    "legalName": {
+                        "@id": "iden3-vocab:legalName",
+                        "@type": "xsd:string"
+                    },
+                    "entityType": {
+                        "@id": "iden3-vocab:entityType",
+                        "@type": "xsd:string"
+                    },
+                    "jurisdiction": {
+                        "@id": "iden3-vocab:jurisdiction",
+                        "@type": "xsd:string"
+                    },
+                    "registrationNumber": {
+                        "@id": "iden3-vocab:registrationNumber",
+                        "@type": "xsd:string"
+                    },
+                    "licenseType": {
+                        "@id": "iden3-vocab:licenseType",
+                        "@type": "xsd:string"
+                    },
+                    "licenseIssuer": {
+                        "@id": "iden3-vocab:licenseIssuer",
+                        "@type": "xsd:string"
+                    },
+                    "liquidityScope": {
+                        "@id": "iden3-vocab:liquidityScope",
+                        "@type": "xsd:string"
+                    },
+                    "maximumCommittedCapital": {
+                        "@id": "iden3-vocab:maximumCommittedCapital",
+                        "@type": "xsd:double"
+                    },
+                    "complianceStatus": {
+                        "@id": "iden3-vocab:complianceStatus",
+                        "@type": "xsd:string"
+                    },
+                    "validFromDate": {
+                        "@id": "iden3-vocab:validFromDate",
+                        "@type": "xsd:dateTime"
+                    },
+                    "validUntilDate": {
+                        "@id": "iden3-vocab:validUntilDate",
+                        "@type": "xsd:dateTime"
+                    },
+                    "amlScreeningStatus": {
+                        "@id": "iden3-vocab:amlScreeningStatus",
+                        "@type": "xsd:string"
+                    },
+                    "riskClassification": {
+                        "@id": "iden3-vocab:riskClassification",
+                        "@type": "xsd:string"
+                    },
+                    "operatingWalletAddress": {
+                        "@id": "iden3-vocab:operatingWalletAddress",
+                        "@type": "xsd:string"
+                    }
+                },
+                "@id": "urn:uuid:df998a19-e51e-4224-9daa-599eb6bae2e6"
+            }
+        }
+    ]
+}
