@@ -1,1 +1,59 @@
-
+{
+    "@context": [
+        {
+            "@protected": true,
+            "@version": 1.1,
+            "id": "@id",
+            "type": "@type",
+            "LegalEntity": {
+                "@context": {
+                    "@propagate": true,
+                    "@protected": true,
+                    "iden3-vocab": "urn:uuid:7d7b0e53-142e-4a20-a9e8-d47bb4f21154#",
+                    "xsd": "http://www.w3.org/2001/XMLSchema#",
+                    "legalName": {
+                        "@id": "iden3-vocab:legalName",
+                        "@type": "xsd:string"
+                    },
+                    "entityType": {
+                        "@id": "iden3-vocab:entityType",
+                        "@type": "xsd:string"
+                    },
+                    "registrationNumber": {
+                        "@id": "iden3-vocab:registrationNumber",
+                        "@type": "xsd:string"
+                    },
+                    "jurisdiction": {
+                        "@id": "iden3-vocab:jurisdiction",
+                        "@type": "xsd:string"
+                    },
+                    "incorporationDate": {
+                        "@id": "iden3-vocab:incorporationDate",
+                        "@type": "xsd:dateTime"
+                    },
+                    "taxID": {
+                        "@id": "iden3-vocab:taxID",
+                        "@type": "xsd:string"
+                    },
+                    "LEI": {
+                        "@id": "iden3-vocab:LEI",
+                        "@type": "xsd:string"
+                    },
+                    "registeredAddress": {
+                        "@id": "iden3-vocab:registeredAddress",
+                        "@type": "xsd:string"
+                    },
+                    "businessWebsite": {
+                        "@id": "iden3-vocab:businessWebsite",
+                        "@type": "xsd:string"
+                    },
+                    "contactEmail": {
+                        "@id": "iden3-vocab:contactEmail",
+                        "@type": "xsd:string"
+                    }
+                },
+                "@id": "urn:uuid:c27c3686-4a76-4eeb-8bcd-f5870049cbfc"
+            }
+        }
+    ]
+}
