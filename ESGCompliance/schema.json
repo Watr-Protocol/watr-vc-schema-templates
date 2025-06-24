@@ -1,1 +1,264 @@
-
+{
+    "$metadata": {
+        "uris": {
+            "jsonLdContext": "https://raw.githubusercontent.com/Watr-Protocol/watr-vc-schema-templates/refs/heads/main/ESGCompliance/schema.jsonld"
+        },
+        "version": "1.0",
+        "type": "ESGCompliance"
+    },
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "A Verifiable Credential attesting that an organization has undergone an ESG assessment aligned with a recognized framework such as CSRD.",
+    "title": "ESG Compliance",
+    "properties": {
+        "credentialSubject": {
+            "description": "Stores the data of the credential",
+            "title": "Credential subject",
+            "properties": {
+                "legalName": {
+                    "description": "The full legal name of the organization.",
+                    "title": "Legal Entity Name",
+                    "type": "string"
+                },
+                "jurisdiction": {
+                    "description": "Country or region under which the entity is registered.",
+                    "enum": [
+                        "IN",
+                        "DE",
+                        "FR",
+                        "NL",
+                        "US",
+                        "UK",
+                        "CH",
+                        "EU",
+                        "GLOBAL"
+                    ],
+                    "title": "Jurisdiction",
+                    "type": "string"
+                },
+                "industrySector": {
+                    "description": "The business sector or activity type.",
+                    "enum": [
+                        "Metals and Mining",
+                        "Oil and Gas",
+                        "Utilities",
+                        "Financial Services",
+                        "Chemicals",
+                        "Manufacturing",
+                        "Transport and Logistics",
+                        "Retail",
+                        "IT and Telecom",
+                        "Agriculture",
+                        "Other"
+                    ],
+                    "title": "Industry Sector",
+                    "type": "string"
+                },
+                "reportingFramework": {
+                    "description": "The ESG or sustainability framework used for the assessment.",
+                    "enum": [
+                        "CSRD",
+                        "GRI",
+                        "SASB",
+                        "TCFD"
+                    ],
+                    "title": "Reporting Framework",
+                    "type": "string"
+                },
+                "frameworkVersion": {
+                    "description": "Version or edition of the reporting standard used (e.g., 'ESRS 1.0').",
+                    "title": "Framework Version",
+                    "type": "string"
+                },
+                "assessmentPeriodStart": {
+                    "description": "Start date of the ESG reporting period.",
+                    "title": "Assessment Period Start",
+                    "format": "date",
+                    "type": "string"
+                },
+                "assessmentPeriodEnd": {
+                    "description": "End date of the ESG reporting period.",
+                    "title": "Assessment Period End",
+                    "format": "date",
+                    "type": "string"
+                },
+                "assessmentDate": {
+                    "description": "Date when the ESG assessment was conducted.",
+                    "title": "Assessment Date",
+                    "format": "date",
+                    "type": "string"
+                },
+                "assessedBy": {
+                    "description": "Name of the organization that performed the ESG assessment.",
+                    "title": "Assessment Provider",
+                    "type": "string"
+                },
+                "verifiedBy": {
+                    "description": "Name of the external verifier or auditor.",
+                    "title": "Verifier",
+                    "type": "string"
+                },
+                "overallScore": {
+                    "description": "Aggregated ESG score on a defined scale.",
+                    "title": "Overall ESG Score",
+                    "maximum": 100,
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "scoringScale": {
+                    "description": "Scoring range or format.",
+                    "enum": [
+                        "0–100",
+                        "A–E",
+                        "AAA–CCC",
+                        "Custom"
+                    ],
+                    "title": "Scoring Scale",
+                    "type": "string"
+                },
+                "complianceStatus": {
+                    "description": "Result of the ESG assessment.",
+                    "enum": [
+                        "compliant",
+                        "partially_compliant",
+                        "non_compliant"
+                    ],
+                    "title": "Compliance Status",
+                    "type": "string"
+                },
+                "complianceTier": {
+                    "description": "Tiered interpretation of ESG result for policies.",
+                    "enum": [
+                        "Tier 1 – Full",
+                        "Tier 2 – High",
+                        "Tier 3 – Basic"
+                    ],
+                    "title": "Compliance Tier",
+                    "type": "string"
+                },
+                "publicReportLink": {
+                    "description": "Link to the published ESG report.",
+                    "title": "Public Report Link",
+                    "format": "uri",
+                    "type": "string"
+                },
+                "evidenceHash": {
+                    "description": "Hash of the ESG audit or report for traceability.",
+                    "title": "Evidence Hash",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Stores the DID of the subject that owns the credential",
+                    "title": "Credential subject ID",
+                    "format": "uri",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "legalName",
+                "jurisdiction",
+                "industrySector",
+                "reportingFramework",
+                "assessmentPeriodStart",
+                "assessmentPeriodEnd",
+                "assessmentDate",
+                "assessedBy",
+                "verifiedBy",
+                "overallScore",
+                "scoringScale",
+                "complianceStatus"
+            ],
+            "type": "object"
+        },
+        "@context": {
+            "type": [
+                "string",
+                "array",
+                "object"
+            ]
+        },
+        "expirationDate": {
+            "format": "date-time",
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "issuanceDate": {
+            "format": "date-time",
+            "type": "string"
+        },
+        "issuer": {
+            "type": [
+                "string",
+                "object"
+            ],
+            "format": "uri",
+            "properties": {
+                "id": {
+                    "format": "uri",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "type": {
+            "type": [
+                "string",
+                "array"
+            ],
+            "items": {
+                "type": "string"
+            }
+        },
+        "credentialSchema": {
+            "properties": {
+                "id": {
+                    "format": "uri",
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "type": "object"
+        },
+        "credentialStatus": {
+            "description": "Allows the discovery of information about the current status of the credential, such as whether it is suspended or revoked.",
+            "title": "Credential Status",
+            "properties": {
+                "id": {
+                    "description": "Id URL of the credentialStatus.",
+                    "title": "Id",
+                    "format": "uri",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Expresses the credential status type (method). The value should provide enough information to determine the current status of the credential.",
+                    "title": "Type",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "type": "object"
+        }
+    },
+    "required": [
+        "credentialSubject",
+        "@context",
+        "id",
+        "issuanceDate",
+        "issuer",
+        "type",
+        "credentialSchema"
+    ],
+    "type": "object"
+}
