@@ -14,6 +14,12 @@
             "description": "Stores the data of the credential",
             "title": "Credential subject",
             "properties": {
+                "id": {
+                    "description": "Stores the DID of the subject that owns the credential",
+                    "title": "Credential subject ID",
+                    "format": "uri",
+                    "type": "string"
+                },
                 "legalName": {
                     "description": "The full registered legal name of the license holder.",
                     "title": "Legal Entity Name",
@@ -139,18 +145,9 @@
                     "type": "string"
                 },
                 "restrictions": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
+                    "type": "string",
                     "description": "Additional constraints or notes regarding license scope or limitations.",
                     "title": "License Restrictions"
-                },
-                "id": {
-                    "description": "Stores the DID of the subject that owns the credential",
-                    "title": "Credential subject ID",
-                    "format": "uri",
-                    "type": "string"
                 }
             },
             "required": [
