@@ -1,6 +1,6 @@
 {
   "$metadata": {
-    "type": "object",
+    "type": "SanctionCheck",
     "uris": {
       "jsonLdContext": "https://raw.githubusercontent.com/Watr-Protocol/watr-vc-schema-templates/refs/heads/main/SanctionsCheck/schema.jsonld"
     },
