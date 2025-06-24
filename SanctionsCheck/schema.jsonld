@@ -5,7 +5,7 @@
       "@version": 1.1,
       "id": "@id",
       "type": "@type",
-      "object": {
+      "SanctionCheck": {
         "@context": {
           "@propagate": true,
           "@protected": true,
