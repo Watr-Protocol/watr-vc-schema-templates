@@ -4,7 +4,7 @@
             "jsonLdContext": "https://raw.githubusercontent.com/Watr-Protocol/watr-vc-schema-templates/refs/heads/main/TradeLicense/schema.jsonld"
         },
         "version": "1.0",
-        "type": "TradeLicenseCredential"
+        "type": "TradeLicense"
     },
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "description": "A Verifiable Credential asserting that an entity holds a valid trade license to trade specific commodities under a jurisdiction.",
