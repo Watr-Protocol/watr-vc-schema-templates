@@ -1,7 +1,7 @@
 {
     "$metadata": {
         "uris": {
-            "jsonLdContext": "https://raw.githubusercontent.com/Watr-Protocol/watr-vc-schema-templates/refs/heads/main/TradeLicenseCredential/Trade%20License%20Credential.jsonld"
+            "jsonLdContext": "https://raw.githubusercontent.com/Watr-Protocol/watr-vc-schema-templates/refs/heads/main/TradeLicense/schema.jsonld"
         },
         "version": "1.0",
         "type": "TradeLicenseCredential"
