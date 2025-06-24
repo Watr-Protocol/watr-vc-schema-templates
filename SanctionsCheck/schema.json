@@ -124,7 +124,17 @@
         "listsChecked": {
           "type": "string",
           "title": "ListsChecked",
-          "description": "Field: listsChecked"
+          "description": "Field: listsChecked",
+          "enum": [
+              "OFAC-SDN",
+              "EU-Consolidated",
+              "UN-Security-Council",
+              "UK-HMT",
+              "SECO",
+              "AU-DFAT",
+              "Canada-SME",
+              "INTERPOL"
+            ]
         },
         "sanctionsMatch": {
           "type": "boolean",
