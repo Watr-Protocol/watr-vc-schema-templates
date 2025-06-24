@@ -21,11 +21,11 @@
           },
           "screeningDate": {
             "@id": "iden3-vocab:screeningDate",
-            "@type": "xsd:string"
+            "@type": "xsd:dateTime"
           },
           "listsChecked": {
             "@id": "iden3-vocab:listsChecked",
-            "@type": "xsd:array"
+            "@type": "xsd:string"
           },
           "sanctionsMatch": {
             "@id": "iden3-vocab:sanctionsMatch",
