@@ -1,0 +1,196 @@
+{
+  "$metadata": {
+    "type": "object",
+    "uris": {
+      "jsonLdContext": "https://raw.githubusercontent.com/Watr-Protocol/watr-vc-schema-templates/refs/heads/main/SanctionsCheck/schema.jsonld"
+    },
+    "version": "1.0.0"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A verifiable credential asserting the result of sanctions screening against major watchlists.",
+  "title": "Sanctions Check Credential",
+  "properties": {
+    "@context": {
+      "type": [
+        "string",
+        "array",
+        "object"
+      ]
+    },
+    "expirationDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "issuanceDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "issuer": {
+      "type": [
+        "string",
+        "object"
+      ],
+      "format": "uri",
+      "properties": {
+        "id": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "type": {
+      "type": [
+        "string",
+        "array"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "credentialSchema": {
+      "properties": {
+        "id": {
+          "format": "uri",
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ],
+      "type": "object"
+    },
+    "credentialStatus": {
+      "description": "Allows the discovery of information about the current status of the credential, such as whether it is suspended or revoked.",
+      "title": "Credential Status",
+      "properties": {
+        "id": {
+          "description": "Id URL of the credentialStatus.",
+          "title": "Id",
+          "format": "uri",
+          "type": "string"
+        },
+        "type": {
+          "description": "Expresses the credential status type (method). The value should provide enough information to determine the current status of the credential.",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ],
+      "type": "object"
+    },
+    "credentialSubject": {
+      "description": "Stores the data of the credential",
+      "title": "Credential subject",
+      "properties": {
+        "id": {
+          "description": "Stores the DID of the subject that owns the credential",
+          "title": "Credential subject ID",
+          "format": "uri",
+          "type": "string"
+        },
+        "entityType": {
+          "type": "string",
+          "title": "EntityType",
+          "description": "Field: entityType",
+          "enum": [
+            "individual",
+            "organization"
+          ]
+        },
+        "entityName": {
+          "type": "string",
+          "title": "EntityName",
+          "description": "Field: entityName"
+        },
+        "screeningDate": {
+          "type": "string",
+          "title": "ScreeningDate",
+          "description": "Field: screeningDate",
+          "format": "date"
+        },
+        "listsChecked": {
+          "type": "array",
+          "title": "ListsChecked",
+          "description": "Field: listsChecked"
+        },
+        "sanctionsMatch": {
+          "type": "boolean",
+          "title": "SanctionsMatch",
+          "description": "Field: sanctionsMatch"
+        },
+        "matchDetails": {
+          "type": "string",
+          "title": "MatchDetails",
+          "description": "Details if a match was found (e.g., name matched, partial match)"
+        },
+        "screeningProvider": {
+          "type": "string",
+          "title": "ScreeningProvider",
+          "description": "Field: screeningProvider",
+          "enum": [
+            "AcmeScreening",
+            "DowJones",
+            "LexisNexis",
+            "Refinitiv",
+            "WorldCheck",
+            "ComplyAdvantage",
+            "WatrComplianceNode"
+          ]
+        },
+        "screeningMethod": {
+          "type": "string",
+          "title": "ScreeningMethod",
+          "description": "Field: screeningMethod",
+          "enum": [
+            "ExactNameMatch",
+            "FuzzyNameMatch",
+            "OwnershipGraph",
+            "EntityResolution",
+            "CountryRiskAnalysis",
+            "ComprehensiveScreening"
+          ]
+        },
+        "confidenceScore": {
+          "type": "integer",
+          "title": "ConfidenceScore",
+          "description": "Screening confidence (e.g., 100 = verified no match, 0 = full match)",
+          "maximum": 100,
+          "minimum": 0
+        }
+      },
+      "required": [
+        "entityType",
+        "screeningDate",
+        "listsChecked",
+        "sanctionsMatch",
+        "screeningProvider",
+        "screeningMethod",
+        "confidenceScore"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "@context",
+    "id",
+    "issuanceDate",
+    "issuer",
+    "type",
+    "credentialSubject",
+    "credentialSchema"
+  ],
+  "type": "object"
+}
