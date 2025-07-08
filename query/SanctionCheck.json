@@ -1,0 +1,34 @@
+{
+  "id": "cbf4bd26-5abc-4a46-ac07-8efb775b5622",
+  "typ": "application/iden3comm-plain-json",
+  "type": "https://iden3-communication.io/proofs/1.0/contract-invoke-request",
+  "thid": "cbf4bd26-5abc-4a46-ac07-8efb775b5622",
+  "from": "did:watrid:watr:river:3wKPdAQXZB1c7CVcj8xBWApMwjS74Q79Ja1yjD71vT",
+  "body": {
+    "reason": "for testing purposes",
+    "transaction_data": {
+      "contract_address": "0xA194fffaD948066FCCb6ff9204c90d63FA6bb8e5",
+      "method_id": "0xb68967e2",
+      "chain_id": 92870,
+      "network": "watr-river"
+    },
+    "scope": [
+      {
+        "id": 1292853230988510,
+        "circuitId": "credentialAtomicQuerySigV2OnChain",
+        "query": {
+          "allowedIssuers": [
+            "*"
+          ],
+          "context": "https://raw.githubusercontent.com/Watr-Protocol/watr-vc-schema-templates/refs/heads/main/SanctionsCheck/schema.jsonld",
+          "credentialSubject": {
+            "confidenceScore": {
+              "$gt": 85
+            }
+          },
+          "type": "SanctionCheck"
+        }
+      }
+    ]
+  }
+}
