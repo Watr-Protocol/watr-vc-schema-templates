@@ -1,0 +1,47 @@
+{
+  "@context": [
+    {
+      "@protected": true,
+      "@version": 1.1,
+      "id": "@id",
+      "type": "@type",
+      "Persona": {
+        "@context": {
+          "@propagate": true,
+          "@protected": true,
+          "iden3-vocab": "urn:uuid:e341ba0c-567f-49c4-9531-2cca916a5121#",
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "inquiryId": {
+            "@id": "iden3-vocab:inquiryId",
+            "@type": "xsd:string"
+          },
+          "firstName": {
+            "@id": "iden3-vocab:firstName",
+            "@type": "xsd:string"
+          },
+          "lastName": {
+            "@id": "iden3-vocab:lastName",
+            "@type": "xsd:string"
+          },
+          "organisation": {
+            "@id": "iden3-vocab:organisation",
+            "@type": "xsd:string"
+          },
+          "email": {
+            "@id": "iden3-vocab:email",
+            "@type": "xsd:string"
+          },
+          "did": {
+            "@id": "iden3-vocab:did",
+            "@type": "xsd:string"
+          },
+          "didAlias": {
+            "@id": "iden3-vocab:didAlias",
+            "@type": "xsd:string"
+          }
+        },
+        "@id": "urn:uuid:183ec298-417c-4406-b5cc-0660f229a3eb"
+      }
+    }
+  ]
+}
